@@ -2,6 +2,7 @@ package xyz.roosterseatyou.pluginlibrary;
 
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
 import org.bukkit.plugin.Plugin;
 
 import java.io.File;
@@ -42,5 +43,13 @@ public class DataFileHelper {
             plugin.getLogger().severe("Could not save data to data file " + fileName + "! Check the error below:");
             e.printStackTrace();
         }
+    }
+
+    public void saveInventory(Player player, Inventory inventory) {
+        setData(player, "inventory", inventory);
+    }
+
+    public Inventory loadInventory(Player player) {
+        return (Inventory) getData(player, "inventory");
     }
 }
