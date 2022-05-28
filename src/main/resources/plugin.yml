@@ -1,6 +1,0 @@
-name: PluginLibrary
-version: '${project.version}'
-main: xyz.roosterseatyou.pluginlibrary.PluginLibrary
-api-version: 1.18
-authors: [ Roosterseatyou, YoussefO07 ]
-description: Library for my Plugins.
