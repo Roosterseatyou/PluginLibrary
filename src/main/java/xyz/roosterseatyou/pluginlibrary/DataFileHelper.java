@@ -32,8 +32,16 @@ public class DataFileHelper {
         data.set(player.getUniqueId().toString() + "." + key, value);
     }
 
+    public void setData(String path, Object value) {
+        data.set(path, value);
+    }
+
     public Object getData(Player player, String key) {
         return data.get(player.getUniqueId().toString() + "." + key);
+    }
+
+    public Object getData(String path) {
+        return data.get(path);
     }
 
     public void saveData() {
@@ -51,5 +59,13 @@ public class DataFileHelper {
 
     public Inventory loadInventory(Player player) {
         return (Inventory) getData(player, "inventory");
+    }
+
+    public void saveInventory(String path, Inventory inventory) {
+        setData(path, inventory);
+    }
+
+    public Inventory loadInventory(String path) {
+        return (Inventory) getData(path);
     }
 }
