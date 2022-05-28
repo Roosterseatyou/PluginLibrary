@@ -68,4 +68,12 @@ public class DataFileHelper {
     public Inventory loadInventory(String path) {
         return (Inventory) getData(path);
     }
+
+    public void createPath(String path) {
+        data.createSection(path);
+    }
+
+    public void removePath(String path) {
+        data.set(path, null);
+    }
 }
